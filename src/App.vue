@@ -37,9 +37,6 @@
 import SiteHeader from "@/components/SiteHeader";
 import SearchFilters from "@/components/SearchFilters";
 import PropertyCard from "@/components/PropertyCard";
-import SiteHeader from "./components/SiteHeader.vue";
-import SearchFilters from "./components/SearchFilters.vue";
-import PropertyCard from "./components/PropertyCard.vue";
 
 export default {
   name: "app",
