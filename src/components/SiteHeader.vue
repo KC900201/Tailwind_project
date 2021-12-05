@@ -111,13 +111,74 @@
             >Isla Schoger</span
           >
         </div>
-        <div class="mt-5 sm:hidden"> <!--Continue https://github.com/adamwathan/workcation/blob/master/src/components/SiteHeader.vue-->
-          <a></a>
-          <a></a>
-          <a></a>
+        <div class="mt-5 sm:hidden">
+          <a href="#account" class="block text-gray-400 hover:text-white"
+            >Account settings</a
+          >
+          <a href="#support" class="mt-3 block text-gray-400 hover:text-white"
+            >Support</a
+          >
+          <a href="#sign-out" class="mt-3 block text-gray-400 hover:text-white"
+            >Sign out</a
+          >
         </div>
-        <dropdown> 
-
+        <dropdown class="hidden sm:block">
+          <template #trigger="{ hasFocus, isOpen }">
+            <span
+              class="block h-8 w-8 overflow-hidden rounded-full borde-2"
+              :class="[
+                hasFocus || isOpen
+                  ? 'border-white xl:border-indigo-500'
+                  : 'border-gray-600 xl:border-gray-300',
+              ]"
+            >
+              <img
+                class="h-full w-full object-cover"
+                src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=256&q=80"
+                alt=""
+              />
+            </span>
+          </template>
+          <template #dropdown>
+            <div class="mt-3 bg-white xl:border rounded-lg w-48 py-2 shadow-xl">
+              <a
+                href="#account"
+                class="
+                  block
+                  hover:text-white
+                  text-gray-800
+                  px-4
+                  py-2
+                  hover:big-indigo-500
+                "
+                >Account settings</a
+              >
+              <a
+                href="#support"
+                class="
+                  block
+                  hover:text-white
+                  text-gray-800
+                  mt-0
+                  py-2
+                  hover:big-indigo-500
+                "
+                >Support</a
+              >
+              <a
+                href="#sign-out"
+                class="
+                  block
+                  hover:text-white
+                  text-gray-800
+                  mt-0
+                  py-2
+                  hover:big-indigo-500
+                "
+                >Sign out</a
+              >
+            </div>
+          </template>
         </dropdown>
       </div>
       <!-- end relative class -->
@@ -127,13 +188,13 @@
 </template>
 <script>
 import Dropdown from "@/components/Dropdown";
-import Dropdown from "./Dropdown.vue";
 
 export default {
-  components: { DropdownDropdown },
+  components: { Dropdown },
   data() {
     return {
       isOpen: false,
+      hasFocus: false,
     };
   },
   methods: {
