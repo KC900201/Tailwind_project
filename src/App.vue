@@ -1,11 +1,12 @@
+
 <template>
   <div
     id="app"
     class="min-h-screen bg-gray-200 antialiased xl:flex xl:flex-col xl:h-screen"
   >
-    <site-header class="xl:flex-shrink-0" />
+    <SiteHeader class="xl:flex-shrink-0" />
     <div class="xl:flex-1 xl:flex xl:overflow-y-hidden">
-      <search-filters />
+      <SearchFilters />
       <main class="py-6 xl:flex-1 xl:overflow-x-hidden">
         <div
           v-for="(location, i) in locations"
@@ -24,7 +25,7 @@
                 :class="{ 'mt-10 sm:ml-4': i > 0 }"
                 class="sm:mt-0 sm:w-80 sm:flex-shrink-0"
               >
-                <property-card :property="property" />
+                <PropertyCard :property="property" />
               </div>
             </div>
           </div>
@@ -33,6 +34,7 @@
     </div>
   </div>
 </template>
+
 <script>
 import SiteHeader from "@/components/SiteHeader";
 import SearchFilters from "@/components/SearchFilters";
@@ -41,9 +43,9 @@ import PropertyCard from "@/components/PropertyCard";
 export default {
   name: "app",
   components: {
-    PropertyCard,
     SiteHeader,
     SearchFilters,
+    PropertyCard,
   },
   data() {
     return {
@@ -142,10 +144,56 @@ export default {
             },
           ],
         },
+        {
+          title: "Dallas",
+          description:
+            "Experience Texas living in these awesome ranch-style homes.",
+          properties: [
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1471231681582-352356ab45a0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+              beds: 3,
+              baths: 2,
+              title: "Modern home in city center",
+              price: 190000,
+              reviewCount: 34,
+              rating: 4,
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1533779283484-8ad4940aa3a8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=80",
+              beds: 4,
+              baths: 1,
+              title: "Quiet living outside the city",
+              price: 175000,
+              reviewCount: 12,
+              rating: 3,
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1432303492674-642e9d0944b2?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+              beds: 5,
+              baths: 4,
+              title: "Renovated apartment uptown",
+              price: 200000,
+              reviewCount: 54,
+              rating: 5,
+            },
+            {
+              imageUrl:
+                "https://images.unsplash.com/photo-1560185007-c5ca9d2c014d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+              beds: 3,
+              baths: 2,
+              title: "Family home in the suburbs",
+              price: 115000,
+              reviewCount: 34,
+              rating: 4,
+            },
+          ],
+        },
       ],
     };
   },
 };
 </script>
-<style>
-</style>
+<style src="./assets/css/tailwind.css"></style>
